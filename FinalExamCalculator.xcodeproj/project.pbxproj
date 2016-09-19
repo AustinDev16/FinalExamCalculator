@@ -10,9 +10,14 @@
 		FACFD4531D909EE300C2B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4521D909EE300C2B154 /* AppDelegate.swift */; };
 		FACFD4551D909EE300C2B154 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4541D909EE300C2B154 /* ViewController.swift */; };
 		FACFD4581D909EE300C2B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACFD4561D909EE300C2B154 /* Main.storyboard */; };
-		FACFD45B1D909EE300C2B154 /* FinalExamCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4591D909EE300C2B154 /* FinalExamCalculator.xcdatamodeld */; };
+		FACFD45B1D909EE300C2B154 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4591D909EE300C2B154 /* Model.xcdatamodeld */; };
 		FACFD45D1D909EE300C2B154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACFD45C1D909EE300C2B154 /* Assets.xcassets */; };
 		FACFD4601D909EE300C2B154 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACFD45E1D909EE300C2B154 /* LaunchScreen.storyboard */; };
+		FACFD46B1D90A50700C2B154 /* Assignment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4671D90A50700C2B154 /* Assignment+CoreDataProperties.swift */; };
+		FACFD46C1D90A50700C2B154 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4681D90A50700C2B154 /* Assignment.swift */; };
+		FACFD46D1D90A50700C2B154 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */; };
+		FACFD46E1D90A50700C2B154 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD46A1D90A50700C2B154 /* Category.swift */; };
+		FACFD4701D90A6FD00C2B154 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD46F1D90A6FD00C2B154 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +25,15 @@
 		FACFD4521D909EE300C2B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACFD4541D909EE300C2B154 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FACFD4571D909EE300C2B154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FACFD45A1D909EE300C2B154 /* FinalExamCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinalExamCalculator.xcdatamodel; sourceTree = "<group>"; };
+		FACFD45A1D909EE300C2B154 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FACFD45C1D909EE300C2B154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACFD45F1D909EE300C2B154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FACFD4611D909EE300C2B154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACFD4671D90A50700C2B154 /* Assignment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assignment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FACFD4681D90A50700C2B154 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FACFD46A1D90A50700C2B154 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FACFD46F1D90A6FD00C2B154 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,11 @@
 		FACFD4461D909EE200C2B154 = {
 			isa = PBXGroup;
 			children = (
+				FACFD4671D90A50700C2B154 /* Assignment+CoreDataProperties.swift */,
+				FACFD4681D90A50700C2B154 /* Assignment.swift */,
+				FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */,
+				FACFD46A1D90A50700C2B154 /* Category.swift */,
+				FACFD46F1D90A6FD00C2B154 /* Stack.swift */,
 				FACFD4511D909EE300C2B154 /* FinalExamCalculator */,
 				FACFD4501D909EE300C2B154 /* Products */,
 			);
@@ -62,7 +77,7 @@
 				FACFD45C1D909EE300C2B154 /* Assets.xcassets */,
 				FACFD45E1D909EE300C2B154 /* LaunchScreen.storyboard */,
 				FACFD4611D909EE300C2B154 /* Info.plist */,
-				FACFD4591D909EE300C2B154 /* FinalExamCalculator.xcdatamodeld */,
+				FACFD4591D909EE300C2B154 /* Model.xcdatamodeld */,
 			);
 			path = FinalExamCalculator;
 			sourceTree = "<group>";
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FACFD45B1D909EE300C2B154 /* FinalExamCalculator.xcdatamodeld in Sources */,
+				FACFD45B1D909EE300C2B154 /* Model.xcdatamodeld in Sources */,
+				FACFD46D1D90A50700C2B154 /* Category+CoreDataProperties.swift in Sources */,
 				FACFD4551D909EE300C2B154 /* ViewController.swift in Sources */,
+				FACFD46B1D90A50700C2B154 /* Assignment+CoreDataProperties.swift in Sources */,
+				FACFD46C1D90A50700C2B154 /* Assignment.swift in Sources */,
+				FACFD4701D90A6FD00C2B154 /* Stack.swift in Sources */,
 				FACFD4531D909EE300C2B154 /* AppDelegate.swift in Sources */,
+				FACFD46E1D90A50700C2B154 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,13 +316,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FACFD4591D909EE300C2B154 /* FinalExamCalculator.xcdatamodeld */ = {
+		FACFD4591D909EE300C2B154 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FACFD45A1D909EE300C2B154 /* FinalExamCalculator.xcdatamodel */,
+				FACFD45A1D909EE300C2B154 /* Model.xcdatamodel */,
 			);
-			currentVersion = FACFD45A1D909EE300C2B154 /* FinalExamCalculator.xcdatamodel */;
-			path = FinalExamCalculator.xcdatamodeld;
+			currentVersion = FACFD45A1D909EE300C2B154 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

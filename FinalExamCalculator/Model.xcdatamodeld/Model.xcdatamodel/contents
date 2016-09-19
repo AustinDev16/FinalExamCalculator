@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G1004" minimumToolsVersion="Automatic">
+    <entity name="Assignment" representedClassName=".Assignment" syncable="YES">
+        <attribute name="category" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="pointsPossible" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="score" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="weight" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Assignment" positionX="-65" positionY="-292" width="128" height="103"/>
+        <element name="Category" positionX="-72" positionY="-162" width="128" height="73"/>
+    </elements>
+</model>
