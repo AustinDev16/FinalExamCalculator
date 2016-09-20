@@ -16,5 +16,5 @@ extension Category {
 
     @NSManaged var name: String
     @NSManaged var weight: NSNumber
-
+    @NSManaged var type: String
 }

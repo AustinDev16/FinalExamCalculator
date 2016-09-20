@@ -17,10 +17,14 @@ class FinalExamController {
     var categories: [Category] = []
     
     init(){
-        //createMockData()
+
         loadCategoriesFromPersistedStorage()
         loadAssignmentsFromPersistedStorage()
-        
+        if self.assignments.count == 0 || self.categories.count == 0 {
+            createMockData()
+            loadCategoriesFromPersistedStorage()
+            loadAssignmentsFromPersistedStorage()
+        }
         print(self.assignments.map{ $0.name})
             print(self.categories.map{$0.name})
         
@@ -28,13 +32,13 @@ class FinalExamController {
     
     func createMockData(){
         
-        guard let cat1 = Category(name: "Homework", weight: 0.25),
-        let cat2 = Category(name: "Essays", weight: 0.25),
-            let cat3 = Category(name: "Final", weight: 0.5) else {return}
-        guard let assign1 = Assignment(name: "Section 1.1", score: 17, pointsPossible: 20, category: cat1),
-        let assign2 = Assignment(name: "Section 1.2", score: 15, pointsPossible: 20, category: cat1),
-        let assign3 = Assignment(name: "Reflective Essay", score: 42, pointsPossible: 50, category: cat2),
-        let assign4 = Assignment(name: "Midterm", score: 79, pointsPossible: 100, category: cat3) else {return}
+        guard let cat1 = Category(name: "Homework", weight: 0.25, type: .Other),
+            let cat2 = Category(name: "Essays", weight: 0.25, type: .Other),
+            let cat3 = Category(name: "Final", weight: 0.5, type: .Final) else {return}
+        guard let assign1 = Assignment(name: "Section 1.1", score: 20, pointsPossible: 20, category: cat1),
+        let assign2 = Assignment(name: "Section 1.2", score: 20, pointsPossible: 20, category: cat1),
+        let assign3 = Assignment(name: "Reflective Essay", score: 50, pointsPossible: 50, category: cat2),
+        let assign4 = Assignment(name: "Midterm", score: 100, pointsPossible: 100, category: cat2) else {return}
         saveToPersistedStorage()
         
         
@@ -57,8 +61,8 @@ class FinalExamController {
     
     // MARK: - Category
     
-    func createCategory(name: String, weight: Double){
-        guard let newCategory = Category(name: name, weight: weight) else {return}
+    func createCategory(name: String, weight: Double, type: CategoryType = .Other){
+        guard let newCategory = Category(name: name, weight: weight, type: type) else {return}
         saveToPersistedStorage()
         FinalExamController.sharedController.categories.append(newCategory)
     }
@@ -114,8 +118,27 @@ class FinalExamController {
     
     // MARK: - Grade Calculation
     
-    func calculateFinalExamGrade(){
+    func calculateFinalExamGrade(desiredGrade: Double) -> Double {
         
+        let categories = FinalExamController.sharedController.categories.filter{ $0.type == "Other"}
+        let final = FinalExamController.sharedController.categories.filter{ $0.type == "Final"}
+        var aveScores: [Double] = []
+        for category in categories {
+            let scoresForCategory = FinalExamController.sharedController.assignments.filter{ $0.category == category.name}
+            
+            let categoryAverage = Double(category.weight)*((scoresForCategory.map{ $0.fractionalScore}.reduce(0){$0 + $1})/Double(scoresForCategory.count))
+            
+            aveScores.append(categoryAverage)
+        }
+        
+        let averageScore = aveScores.reduce(0) {$0 + $1}
+        let finalWeight = Double((final[0].weight))
+//        print("Cat scores: \(aveScores)")
+//        print("Desired grade: \(desiredGrade)")
+//        print("averageScore: \(averageScore)")
+//        print("finalWeight: \(finalWeight)")
+        let finalExamScore = (desiredGrade - averageScore)/(finalWeight)
+        return finalExamScore
     }
     
 }

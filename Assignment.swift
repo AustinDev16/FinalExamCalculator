@@ -28,4 +28,5 @@ class Assignment: NSManagedObject {
 }
 extension Assignment {
     static var kName: String { return "Assignment" }
+    var fractionalScore: Double {return Double(score)/Double(pointsPossible)}
 }

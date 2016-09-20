@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        FinalExamController.sharedController.assignments.count
+        //FinalExamController.sharedController.assignments.count
+        print(FinalExamController.sharedController.calculateFinalExamGrade(0.76))
         return true
     }
 
