@@ -18,6 +18,7 @@
 		FACFD46D1D90A50700C2B154 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */; };
 		FACFD46E1D90A50700C2B154 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD46A1D90A50700C2B154 /* Category.swift */; };
 		FACFD4701D90A6FD00C2B154 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD46F1D90A6FD00C2B154 /* Stack.swift */; };
+		FACFD4781D90BCEB00C2B154 /* FinalExamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4771D90BCEB00C2B154 /* FinalExamController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +30,12 @@
 		FACFD45C1D909EE300C2B154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACFD45F1D909EE300C2B154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FACFD4611D909EE300C2B154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FACFD4671D90A50700C2B154 /* Assignment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assignment+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FACFD4681D90A50700C2B154 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
-		FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FACFD46A1D90A50700C2B154 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		FACFD46F1D90A6FD00C2B154 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		FACFD4671D90A50700C2B154 /* Assignment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Assignment+CoreDataProperties.swift"; path = "../Assignment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FACFD4681D90A50700C2B154 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = ../Assignment.swift; sourceTree = "<group>"; };
+		FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FACFD46A1D90A50700C2B154 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
+		FACFD46F1D90A6FD00C2B154 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = ../Stack.swift; sourceTree = "<group>"; };
+		FACFD4771D90BCEB00C2B154 /* FinalExamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalExamController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,11 +52,6 @@
 		FACFD4461D909EE200C2B154 = {
 			isa = PBXGroup;
 			children = (
-				FACFD4671D90A50700C2B154 /* Assignment+CoreDataProperties.swift */,
-				FACFD4681D90A50700C2B154 /* Assignment.swift */,
-				FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */,
-				FACFD46A1D90A50700C2B154 /* Category.swift */,
-				FACFD46F1D90A6FD00C2B154 /* Stack.swift */,
 				FACFD4511D909EE300C2B154 /* FinalExamCalculator */,
 				FACFD4501D909EE300C2B154 /* Products */,
 			);
@@ -71,15 +68,37 @@
 		FACFD4511D909EE300C2B154 /* FinalExamCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				FACFD4711D90BA2900C2B154 /* Model */,
+				FACFD4721D90BAD900C2B154 /* Model Controllers */,
 				FACFD4521D909EE300C2B154 /* AppDelegate.swift */,
 				FACFD4541D909EE300C2B154 /* ViewController.swift */,
 				FACFD4561D909EE300C2B154 /* Main.storyboard */,
 				FACFD45C1D909EE300C2B154 /* Assets.xcassets */,
 				FACFD45E1D909EE300C2B154 /* LaunchScreen.storyboard */,
 				FACFD4611D909EE300C2B154 /* Info.plist */,
-				FACFD4591D909EE300C2B154 /* Model.xcdatamodeld */,
 			);
 			path = FinalExamCalculator;
+			sourceTree = "<group>";
+		};
+		FACFD4711D90BA2900C2B154 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FACFD4591D909EE300C2B154 /* Model.xcdatamodeld */,
+				FACFD4671D90A50700C2B154 /* Assignment+CoreDataProperties.swift */,
+				FACFD4681D90A50700C2B154 /* Assignment.swift */,
+				FACFD4691D90A50700C2B154 /* Category+CoreDataProperties.swift */,
+				FACFD46A1D90A50700C2B154 /* Category.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FACFD4721D90BAD900C2B154 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FACFD46F1D90A6FD00C2B154 /* Stack.swift */,
+				FACFD4771D90BCEB00C2B154 /* FinalExamController.swift */,
+			);
+			name = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +178,7 @@
 				FACFD46B1D90A50700C2B154 /* Assignment+CoreDataProperties.swift in Sources */,
 				FACFD46C1D90A50700C2B154 /* Assignment.swift in Sources */,
 				FACFD4701D90A6FD00C2B154 /* Stack.swift in Sources */,
+				FACFD4781D90BCEB00C2B154 /* FinalExamController.swift in Sources */,
 				FACFD4531D909EE300C2B154 /* AppDelegate.swift in Sources */,
 				FACFD46E1D90A50700C2B154 /* Category.swift in Sources */,
 			);
