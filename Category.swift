@@ -25,6 +25,8 @@ class Category: NSManagedObject {
         self.weight = weight
         self.type = type.rawValue
     }
+    
+       var assignments: [Assignment]?
 
 }
 extension Category {

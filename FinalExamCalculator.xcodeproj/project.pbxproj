@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FACFD4531D909EE300C2B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4521D909EE300C2B154 /* AppDelegate.swift */; };
-		FACFD4551D909EE300C2B154 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4541D909EE300C2B154 /* ViewController.swift */; };
 		FACFD4581D909EE300C2B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACFD4561D909EE300C2B154 /* Main.storyboard */; };
 		FACFD45B1D909EE300C2B154 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4591D909EE300C2B154 /* Model.xcdatamodeld */; };
 		FACFD45D1D909EE300C2B154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACFD45C1D909EE300C2B154 /* Assets.xcassets */; };
@@ -19,12 +18,13 @@
 		FACFD46E1D90A50700C2B154 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD46A1D90A50700C2B154 /* Category.swift */; };
 		FACFD4701D90A6FD00C2B154 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD46F1D90A6FD00C2B154 /* Stack.swift */; };
 		FACFD4781D90BCEB00C2B154 /* FinalExamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4771D90BCEB00C2B154 /* FinalExamController.swift */; };
+		FAF2D2B41D9228AB00B130A5 /* AssignmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D2B31D9228AB00B130A5 /* AssignmentListTableViewController.swift */; };
+		FAF2D2B61D9237AB00B130A5 /* FinalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D2B51D9237AB00B130A5 /* FinalScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FACFD44F1D909EE300C2B154 /* FinalExamCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalExamCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACFD4521D909EE300C2B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FACFD4541D909EE300C2B154 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FACFD4571D909EE300C2B154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FACFD45A1D909EE300C2B154 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FACFD45C1D909EE300C2B154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		FACFD46A1D90A50700C2B154 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
 		FACFD46F1D90A6FD00C2B154 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = ../Stack.swift; sourceTree = "<group>"; };
 		FACFD4771D90BCEB00C2B154 /* FinalExamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalExamController.swift; sourceTree = "<group>"; };
+		FAF2D2B31D9228AB00B130A5 /* AssignmentListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentListTableViewController.swift; sourceTree = "<group>"; };
+		FAF2D2B51D9237AB00B130A5 /* FinalScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +73,9 @@
 				FACFD4711D90BA2900C2B154 /* Model */,
 				FACFD4721D90BAD900C2B154 /* Model Controllers */,
 				FACFD4521D909EE300C2B154 /* AppDelegate.swift */,
-				FACFD4541D909EE300C2B154 /* ViewController.swift */,
 				FACFD4561D909EE300C2B154 /* Main.storyboard */,
+				FAF2D2B51D9237AB00B130A5 /* FinalScoreViewController.swift */,
+				FAF2D2B31D9228AB00B130A5 /* AssignmentListTableViewController.swift */,
 				FACFD45C1D909EE300C2B154 /* Assets.xcassets */,
 				FACFD45E1D909EE300C2B154 /* LaunchScreen.storyboard */,
 				FACFD4611D909EE300C2B154 /* Info.plist */,
@@ -174,13 +177,14 @@
 			files = (
 				FACFD45B1D909EE300C2B154 /* Model.xcdatamodeld in Sources */,
 				FACFD46D1D90A50700C2B154 /* Category+CoreDataProperties.swift in Sources */,
-				FACFD4551D909EE300C2B154 /* ViewController.swift in Sources */,
+				FAF2D2B61D9237AB00B130A5 /* FinalScoreViewController.swift in Sources */,
 				FACFD46B1D90A50700C2B154 /* Assignment+CoreDataProperties.swift in Sources */,
 				FACFD46C1D90A50700C2B154 /* Assignment.swift in Sources */,
 				FACFD4701D90A6FD00C2B154 /* Stack.swift in Sources */,
 				FACFD4781D90BCEB00C2B154 /* FinalExamController.swift in Sources */,
 				FACFD4531D909EE300C2B154 /* AppDelegate.swift in Sources */,
 				FACFD46E1D90A50700C2B154 /* Category.swift in Sources */,
+				FAF2D2B41D9228AB00B130A5 /* AssignmentListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +336,7 @@
 				FACFD4661D909EE300C2B154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

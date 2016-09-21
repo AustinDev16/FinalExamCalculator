@@ -20,6 +20,7 @@ class FinalExamController {
 
         loadCategoriesFromPersistedStorage()
         loadAssignmentsFromPersistedStorage()
+        //assignAssignmentsToCategory()
         if self.assignments.count == 0 || self.categories.count == 0 {
             createMockData()
             loadCategoriesFromPersistedStorage()
@@ -47,6 +48,7 @@ class FinalExamController {
     func createAssignment(name: String, score: Double, pointsPossible: Double, category: Category){
         guard let newAssignment = Assignment(name: name, score: score, pointsPossible: pointsPossible, category: category) else {return}
         saveToPersistedStorage()
+        category.assignments?.append(newAssignment)
         FinalExamController.sharedController.assignments.append(newAssignment)
     }
     
@@ -96,6 +98,15 @@ class FinalExamController {
         let moc = Stack.sharedStack.managedObjectContext
         
         self.assignments = (try? moc.executeFetchRequest(fetchRequest)) as? [Assignment] ?? []
+        
+    }
+    
+    func assignAssignmentsToCategory(){
+        for category in FinalExamController.sharedController.categories {
+            let assignments = FinalExamController.sharedController.assignments.filter{ $0.category == category.name}
+            category.assignments = assignments
+            
+        }
         
     }
     
