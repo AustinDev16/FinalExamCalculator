@@ -35,11 +35,11 @@ class FinalExamController {
         
         guard let cat1 = Category(name: "Homework", weight: 0.25, type: .Other),
             let cat2 = Category(name: "Essays", weight: 0.25, type: .Other),
-            let cat3 = Category(name: "Final", weight: 0.5, type: .Final) else {return}
-        guard let assign1 = Assignment(name: "Section 1.1", score: 20, pointsPossible: 20, category: cat1),
-        let assign2 = Assignment(name: "Section 1.2", score: 20, pointsPossible: 20, category: cat1),
-        let assign3 = Assignment(name: "Reflective Essay", score: 50, pointsPossible: 50, category: cat2),
-        let assign4 = Assignment(name: "Midterm", score: 100, pointsPossible: 100, category: cat2) else {return}
+            let _ = Category(name: "Final", weight: 0.5, type: .Final) else {return}
+        guard let _ = Assignment(name: "Section 1.1", score: 20, pointsPossible: 20, category: cat1),
+        let _ = Assignment(name: "Section 1.2", score: 20, pointsPossible: 20, category: cat1),
+        let _ = Assignment(name: "Reflective Essay", score: 50, pointsPossible: 50, category: cat2),
+        let _ = Assignment(name: "Midterm", score: 100, pointsPossible: 100, category: cat2) else {return}
         saveToPersistedStorage()
         
         

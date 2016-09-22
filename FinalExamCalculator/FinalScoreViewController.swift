@@ -7,13 +7,15 @@
 //
 
 import UIKit
+public let textFont = "Avenir-Medium"
+public let greyColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 0.49)
+public let blueColor = UIColor(red: 133/255, green: 198/255, blue: 234/255, alpha: 1)
+
 
 class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: - Properties
-    private let textFont = "Avenir-Medium"
-    private let greyColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 0.49)
-    private let blueColor = UIColor(red: 133/255, green: 198/255, blue: 234/255, alpha: 1)
+ 
     
     let finalScoreLabel = UILabel()
     let scorePicker = UIPickerView()
@@ -93,9 +95,6 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
         onYourFinal.textColor = .whiteColor()
         onYourFinal.font = UIFont(name: textFont, size: 24)
         
-        
-        
-        
         self.view.addSubview(finalScoreLabel)
         self.view.addSubview(scorePicker)
         self.view.addSubview(currentGradeLabel)
@@ -131,18 +130,18 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         // Final Score header
         let finalScoreHeaderCenterX = NSLayoutConstraint(item: finalScoreHeader, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
-        let finalScoreHeaderTopToPicker = NSLayoutConstraint(item: finalScoreHeader, attribute: .Top, relatedBy: .Equal, toItem: scorePicker, attribute: .Bottom, multiplier: 1, constant: 15)
+        let finalScoreHeaderTopToPicker = NSLayoutConstraint(item: finalScoreHeader, attribute: .Top, relatedBy: .Equal, toItem: scorePicker, attribute: .Bottom, multiplier: 1, constant: 0)
         self.view.addConstraints([finalScoreHeaderCenterX, finalScoreHeaderTopToPicker])
         
         // Final Score Label
         let finalScoreLabelCenterX = NSLayoutConstraint(item: finalScoreLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
-        let finalScoreLabelFromBottom = NSLayoutConstraint(item: finalScoreLabel, attribute: .Top, relatedBy: .Equal, toItem: finalScoreHeader, attribute: .Bottom, multiplier: 1, constant: 10)
+        let finalScoreLabelFromBottom = NSLayoutConstraint(item: finalScoreLabel, attribute: .Top, relatedBy: .Equal, toItem: finalScoreHeader, attribute: .Bottom, multiplier: 1, constant: 6)
         self.view.addConstraints([finalScoreLabelCenterX, finalScoreLabelFromBottom])
         
         //On your final Label
         let onYourFinalCenterX = NSLayoutConstraint(item: onYourFinal, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
         
-        let onYourFinalFromFinalScore = NSLayoutConstraint(item: onYourFinal, attribute: .Top, relatedBy: .Equal, toItem: finalScoreLabel, attribute: .Bottom, multiplier: 1, constant: 10)
+        let onYourFinalFromFinalScore = NSLayoutConstraint(item: onYourFinal, attribute: .Top, relatedBy: .Equal, toItem: finalScoreLabel, attribute: .Bottom, multiplier: 1, constant: 6)
         self.view.addConstraints([onYourFinalCenterX, onYourFinalFromFinalScore])
     }
     

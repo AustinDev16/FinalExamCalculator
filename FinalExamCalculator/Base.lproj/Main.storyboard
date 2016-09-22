@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="2053" y="37"/>
         </scene>
-        <!--Scores-->
+        <!--Assignment List Table View Controller-->
         <scene sceneID="TGG-xk-nhd">
             <objects>
                 <tableViewController id="Ofv-aU-GPc" customClass="AssignmentListTableViewController" customModule="FinalExamCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,24 +69,39 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Scores" id="1vc-8z-iv7">
-                        <barButtonItem key="leftBarButtonItem" title="Categories" id="PeX-PK-RdN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zlq-nB-R2g">
-                            <connections>
-                                <segue destination="UtR-a9-wkP" kind="show" identifier="toDetailAddNew" id="t31-V0-3UZ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="1vc-8z-iv7"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="UtR-a9-wkP" kind="show" identifier="toDetailAddNew" id="pFV-c7-MhK"/>
+                        <segue destination="cJD-yx-fFw" kind="presentation" identifier="toCategories" id="10Z-TX-FSx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdi-nR-IKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2048" y="735"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Y6w-3S-PdP">
+            <objects>
+                <viewController id="cJD-yx-fFw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZR3-5c-vx8"/>
+                        <viewControllerLayoutGuide type="bottom" id="rB6-Hy-AE4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MRz-cQ-dlm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cC5-NP-bDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047" y="1458"/>
+        </scene>
         <!--Assignment-->
         <scene sceneID="mvN-iY-m9w">
             <objects>
-                <tableViewController id="UtR-a9-wkP" sceneMemberID="viewController">
+                <tableViewController id="UtR-a9-wkP" customClass="AssignmentDetailTableViewController" customModule="FinalExamCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ff4-0b-55n">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,10 +110,10 @@
                             <tableViewSection headerTitle="Name" id="Hqg-kC-GX7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="igf-Y1-Emb">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igf-Y1-Emb" id="QC7-u5-vEh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Assignment name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ER1-C2-gnw">
@@ -119,10 +134,10 @@
                             <tableViewSection headerTitle="Category" id="NgC-db-hfw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="Gf2-ZW-Guk">
-                                        <rect key="frame" x="0.0" y="207.5" width="600" height="79"/>
+                                        <rect key="frame" x="0.0" y="208" width="600" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gf2-ZW-Guk" id="sRh-Do-9FI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl0-cX-liK">
@@ -142,10 +157,10 @@
                             <tableViewSection headerTitle="Score" id="I1W-u7-7xt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="yMJ-oc-1m9">
-                                        <rect key="frame" x="0.0" y="336.5" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="337" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMJ-oc-1m9" id="hna-fl-Tne">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGc-6l-yhT">
@@ -260,6 +275,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t31-V0-3UZ"/>
+        <segue reference="pFV-c7-MhK"/>
     </inferredMetricsTieBreakers>
 </document>
