@@ -27,7 +27,8 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var desiredGrade: Double = 0 {
         didSet{
-            finalScoreLabel.text = "\(FinalExamController.sharedController.calculateFinalExamGrade(desiredGrade)*100) %"
+            finalScoreLabel.text = "\(Int(FinalExamController.sharedController.calculateFinalExamGrade(desiredGrade)*100)) %"
+            
         }
     }
     var pickerValues: [Int] = []

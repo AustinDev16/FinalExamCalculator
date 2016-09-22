@@ -13,14 +13,25 @@ class AssignmentDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // let cancel = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonTapped))
+        //self.navigationItem.backBarButtonItem = cancel
+        
+        self.title = "Assignment"
+        
+        let save = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(self.saveButtonTapped))
+        self.navigationItem.rightBarButtonItem = save
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
+    func cancelButtonTapped(){
+        self.performSegueWithIdentifier("backToList", sender: nil)
+    }
+    
+    func saveButtonTapped(){
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
