@@ -138,6 +138,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let width = self.view.frame.width
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 60))
+        navBar.backgroundColor = .whiteColor()
+        navBar.alpha = 0.8
+        
         self.view.addSubview(navBar)
         let navItem = UINavigationItem(title: "Categories")
         let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: nil, action: #selector(doneButtonTapped))

@@ -13,11 +13,19 @@ class AssignmentListTableViewController: UITableViewController {
     
     
     override func viewDidLoad() {
+        let gradient = AppearenceController.gradient()
+        gradient.locations = [0.3, 1.2]
+        gradient.frame = self.view.bounds
+        //self.view.layer.addSublayer(gradient)
+        //self.tableView.layer.addSublayer(gradient)
         super.viewDidLoad()
         
         self.title = "Scores"
-        self.navigationController?.navigationBar.barTintColor = greyColor
-        self.navigationController?.navigationBar.alpha = 1
+        
+        
+        self.navigationController?.navigationBar.backgroundColor = .whiteColor()
+        self.navigationController?.navigationBar.alpha = 0.1
+        
         
         self.definesPresentationContext = true
         
@@ -27,6 +35,7 @@ class AssignmentListTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = categoriesButton
         
         self.tableView.backgroundColor = blueColor
+        
         
       FinalExamController.sharedController.assignAssignmentsToCategory()
     }

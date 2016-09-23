@@ -36,11 +36,16 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = greyColor
-        self.navigationController?.navigationBar.alpha = 1
+        let gradient = AppearenceController.gradient()
+        gradient.locations = [0.3, 1.2]
+        gradient.frame = self.view.bounds
+        self.view.layer.addSublayer(gradient)
+        
+        self.navigationController?.navigationBar.backgroundColor = .whiteColor()
+        self.navigationController?.navigationBar.alpha = 0.1
         
         self.tabBarController?.tabBar.barTintColor = greyColor
-        
+        self.tabBarController?.tabBar.backgroundColor = greyColor
         setupLabelText()
         setupLayoutConstraints()
         self.scorePicker.delegate = self
