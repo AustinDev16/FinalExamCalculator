@@ -14,11 +14,15 @@ class AssignmentListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         let gradient = AppearenceController.gradient()
-        gradient.locations = [0.3, 1.2]
+        //gradient.locations = [0.3, 1.2]
         gradient.frame = self.view.bounds
         //self.view.layer.addSublayer(gradient)
         //self.tableView.layer.addSublayer(gradient)
         super.viewDidLoad()
+        
+        let backgroundView = UIView(frame: self.tableView.bounds)
+        backgroundView.layer.insertSublayer(gradient, atIndex: 0)
+        self.tableView.backgroundView = backgroundView
         
         self.title = "Scores"
         
@@ -34,10 +38,14 @@ class AssignmentListTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addButton
         self.navigationItem.leftBarButtonItem = categoriesButton
         
-        self.tableView.backgroundColor = blueColor
+//        self.tableView.backgroundColor = blueColor
         
         
       FinalExamController.sharedController.assignAssignmentsToCategory()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
 //    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -67,7 +75,7 @@ class AssignmentListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return FinalExamController.sharedController.categories[section].name
+        return "\(FinalExamController.sharedController.categories[section].name) - \(Int(Double(FinalExamController.sharedController.categories[section].weight)*100)) %"
     }
 
     
