@@ -120,19 +120,39 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // MARK: - UIElements
     
+    
     let categoryLabel = UILabel()
     let catSlider = UISlider()
     let tableView = UITableView()
-    let doneButton = UIButton(type: .System)
-    let addButton = UIButton(type: .System)
     let newCategoryTextField = UITextField()
     let weightLabel = UILabel()
+    let instructionLabel = UILabel()
     let weightPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        let topColor = blueColor.CGColor
+        let bottomColor = UIColor.grayColor().CGColor
         
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [topColor, bottomColor]
+        gradientLayer.locations = [0.0, 0.8]
+        
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.addSublayer(gradientLayer)
+        
+        let width = self.view.frame.width
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 60))
+        self.view.addSubview(navBar)
+        let navItem = UINavigationItem(title: "Categories")
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: nil, action: #selector(doneButtonTapped))
+                navItem.leftBarButtonItem = doneButton
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: nil, action: #selector(addCategoryTapped))
+        navItem.rightBarButtonItem = addButton
+        
+        
+        navBar.setItems([navItem], animated: false)
         //tableView.frame = CGRectMake(40, 0, 320, 600)
         
         tableView.delegate = self
@@ -140,13 +160,13 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         
 //         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        self.view.backgroundColor = blueColor
+       // self.view.backgroundColor = blueColor
         
         self.weightPicker.delegate = self
         self.weightPicker.dataSource = self
         
-        setupUIElements()
-        setupConstraints()
+       setupUIElements()
+       setupConstraints()
         
         updatePickerWithWeights()
         
@@ -156,24 +176,26 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func setupUIElements(){
-        categoryLabel.text = "Categories"
+        //categoryLabel.text = "Categories"
+       //// categoryLabel.font = UIFont(name: textFont, size: 36)
         
-        categoryLabel.translatesAutoresizingMaskIntoConstraints = false
+        //categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         catSlider.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.translatesAutoresizingMaskIntoConstraints = false
+       // doneButton.translatesAutoresizingMaskIntoConstraints = false
+        //addButton.translatesAutoresizingMaskIntoConstraints = false
         newCategoryTextField.translatesAutoresizingMaskIntoConstraints = false
         weightLabel.translatesAutoresizingMaskIntoConstraints = false
+        instructionLabel.translatesAutoresizingMaskIntoConstraints = false
         weightPicker.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.backgroundColor = blueColor
+        tableView.backgroundColor = .clearColor()
         
-        doneButton.setTitle("Done", forState: .Normal)
-        doneButton.addTarget(self, action: #selector(doneButtonTapped), forControlEvents: .TouchUpInside)
+       // doneButton.setTitle("Done", forState: .Normal)
+       // doneButton.addTarget(self, action: #selector(doneButtonTapped), forControlEvents: .TouchUpInside)
         
-        addButton.setTitle("Add", forState: .Normal)
-        addButton.addTarget(self, action: #selector(addCategoryTapped), forControlEvents: .TouchUpInside)
+       // addButton.setTitle("Add", forState: .Normal)
+//addButton.addTarget(self, action: #selector(addCategoryTapped), forControlEvents: .TouchUpInside)
         
         
         
@@ -182,49 +204,49 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         newCategoryTextField.returnKeyType = .Done
         newCategoryTextField.borderStyle = .RoundedRect
         newCategoryTextField.backgroundColor = UIColor.clearColor()
+        newCategoryTextField.textColor = .whiteColor()
         
         weightLabel.text = "Weights"
         weightLabel.textColor = .whiteColor()
+        weightLabel.font = UIFont(name: textFont, size: 24)
         
+        instructionLabel.text = "Adjust weights from left to right."
+        instructionLabel.textColor = .redColor()
         
+        instructionLabel.font = UIFont(name: textFont, size: 18)
         
-        self.view.addSubview(categoryLabel)
+        //self.view.addSubview(categoryLabel)
         //self.view.addSubview(catSlider)
         self.view.addSubview(tableView)
-        self.view.addSubview(doneButton)
-        self.view.addSubview(addButton)
+       // self.view.addSubview(doneButton)
+       // self.view.addSubview(addButton)
         self.view.addSubview(newCategoryTextField)
         self.view.addSubview(weightLabel)
+        self.view.addSubview(instructionLabel)
         self.view.addSubview(weightPicker)
         
     }
 
     func setupConstraints(){
-        
-        // Label
-        let labelTop = NSLayoutConstraint(item: categoryLabel, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .TopMargin, multiplier: 1, constant: 20)
-        let labelCenterX = NSLayoutConstraint(item: categoryLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
-        self.view.addConstraints([labelTop, labelCenterX])
-        
-        //Done button
-        let doneButtonTop = NSLayoutConstraint(item: doneButton, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 20)
-        let doneButtonLeading = NSLayoutConstraint(item: doneButton, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .LeadingMargin, multiplier: 1, constant: 0)
-        //let doneButtonTrailing = NSLayoutConstraint(item: doneButton, attribute: .Trailing, relatedBy: .Equal, toItem: categoryLabel, attribute: .Leading, multiplier: 1, constant: 0)
-        self.view.addConstraints([doneButtonTop, doneButtonLeading])
+        //        //Done button
+//        let doneButtonTop = NSLayoutConstraint(item: doneButton, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 20)
+//        let doneButtonLeading = NSLayoutConstraint(item: doneButton, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .LeadingMargin, multiplier: 1, constant: 0)
+//        //let doneButtonTrailing = NSLayoutConstraint(item: doneButton, attribute: .Trailing, relatedBy: .Equal, toItem: categoryLabel, attribute: .Leading, multiplier: 1, constant: 0)
+//        self.view.addConstraints([doneButtonTop, doneButtonLeading])
         
         //Textfield and add button
         let textFieldBottom = NSLayoutConstraint(item: newCategoryTextField, attribute: .Bottom, relatedBy: .Equal, toItem: tableView, attribute: .Top, multiplier: 1, constant: 0)
-        let textFieldTrailing = NSLayoutConstraint(item: newCategoryTextField, attribute: .Trailing, relatedBy: .Equal, toItem: addButton, attribute: .Leading, multiplier: 1, constant: -6)
+        let textFieldTrailing = NSLayoutConstraint(item: newCategoryTextField, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .TrailingMargin, multiplier: 1, constant: 0)
         let textFieldLeading = NSLayoutConstraint(item: newCategoryTextField, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .LeadingMargin, multiplier: 1, constant: 0)
         
-        let addButtonBottom = NSLayoutConstraint(item: addButton, attribute: .Bottom, relatedBy: .Equal, toItem: tableView, attribute: .Top, multiplier: 1, constant: 0)
-        let addButtonTrailing = NSLayoutConstraint(item: addButton, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .TrailingMargin, multiplier: 1, constant: 0)
+//        let addButtonBottom = NSLayoutConstraint(item: addButton, attribute: .Bottom, relatedBy: .Equal, toItem: tableView, attribute: .Top, multiplier: 1, constant: 0)
+//        let addButtonTrailing = NSLayoutConstraint(item: addButton, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .TrailingMargin, multiplier: 1, constant: 0)
         
-        self.view.addConstraints([textFieldBottom, textFieldTrailing, textFieldLeading, addButtonBottom, addButtonTrailing])
+        self.view.addConstraints([textFieldBottom, textFieldTrailing, textFieldLeading])
         
         
         // Tableview
-        let tableViewCenterX = NSLayoutConstraint(item: self.tableView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1, constant: 0)
+        let tableViewCenterX = NSLayoutConstraint(item: self.tableView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .TrailingMargin, multiplier: 1, constant: 0)
         let tableViewCenterY = NSLayoutConstraint(item: self.tableView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1, constant: 0)
         let tableViewBottom = NSLayoutConstraint(item: self.tableView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1, constant: -300)
         let tableViewTop = NSLayoutConstraint(item: self.tableView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 100)
@@ -234,6 +256,11 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         let weightCenterX = NSLayoutConstraint(item: weightLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
         let weightTop = NSLayoutConstraint(item: weightLabel, attribute: .Top, relatedBy: .Equal, toItem: tableView, attribute: .Bottom, multiplier: 1, constant: 8)
         self.view.addConstraints([weightCenterX, weightTop])
+        
+        // Instructional Label
+        let instructionBottom = NSLayoutConstraint(item: instructionLabel, attribute: .Bottom, relatedBy: .Equal, toItem: weightPicker, attribute: .Top, multiplier: 1, constant: 4)
+        let instructionLeading = NSLayoutConstraint(item: instructionLabel, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .LeadingMargin, multiplier: 1, constant: 0)
+        self.view.addConstraints([instructionBottom, instructionLeading])
         
         // Weight Picker
         let weightPickerTop = NSLayoutConstraint(item: weightPicker, attribute: .Top, relatedBy: .Equal, toItem: weightLabel, attribute: .Bottom, multiplier: 1, constant: 20)
@@ -290,13 +317,16 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let category = FinalExamController.sharedController.categories[indexPath.row]
         
-        cell.accessoryType = .DisclosureIndicator
+        //cell.accessoryType = .DisclosureIndicator
         cell.textLabel?.text = category.name
+        cell.textLabel?.font = UIFont(name: textFont, size: 18)
         cell.textLabel?.textColor = .whiteColor()
         
-        cell.detailTextLabel?.text = "\(Int(Double(category.weight) * 100))%"
+        cell.detailTextLabel?.text = "\(Int(Double(category.weight) * 100)) %"
+        cell.detailTextLabel?.textColor = .whiteColor()
+        cell.detailTextLabel?.font = UIFont(name: textFont, size: 18)
         
-        cell.backgroundColor = blueColor
+        cell.backgroundColor = .clearColor()
         
         
         return cell
