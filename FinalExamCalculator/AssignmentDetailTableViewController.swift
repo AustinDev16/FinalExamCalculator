@@ -14,6 +14,7 @@ class AssignmentDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
        // let cancel = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonTapped))
         //self.navigationItem.backBarButtonItem = cancel
         
@@ -29,7 +30,9 @@ class AssignmentDetailTableViewController: UITableViewController {
     }
     
     func saveButtonTapped(){
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        
+        navigationController?.popViewControllerAnimated(true)
+       
     }
     
     override func didReceiveMemoryWarning() {
