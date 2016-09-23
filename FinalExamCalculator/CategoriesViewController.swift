@@ -131,13 +131,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        let topColor = blueColor.CGColor
-        let bottomColor = UIColor.grayColor().CGColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [topColor, bottomColor]
-        gradientLayer.locations = [0.0, 0.8]
+        let gradientLayer = AppearenceController.gradient()
         
         gradientLayer.frame = self.view.bounds
         self.view.layer.addSublayer(gradientLayer)

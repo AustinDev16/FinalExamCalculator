@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA9F9E891D959DAD00143DC1 /* AppearenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F9E881D959DAD00143DC1 /* AppearenceController.swift */; };
 		FAAC05B01D9379E300AC5847 /* AssignmentDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC05AF1D9379E300AC5847 /* AssignmentDetailTableViewController.swift */; };
 		FAAC05B21D9386A900AC5847 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC05B11D9386A900AC5847 /* CategoriesViewController.swift */; };
 		FACFD4531D909EE300C2B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFD4521D909EE300C2B154 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA9F9E881D959DAD00143DC1 /* AppearenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearenceController.swift; sourceTree = "<group>"; };
 		FAAC05AF1D9379E300AC5847 /* AssignmentDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentDetailTableViewController.swift; sourceTree = "<group>"; };
 		FAAC05B11D9386A900AC5847 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		FACFD44F1D909EE300C2B154 /* FinalExamCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalExamCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				FAF2D2B31D9228AB00B130A5 /* AssignmentListTableViewController.swift */,
 				FAAC05AF1D9379E300AC5847 /* AssignmentDetailTableViewController.swift */,
 				FAAC05B11D9386A900AC5847 /* CategoriesViewController.swift */,
+				FA9F9E881D959DAD00143DC1 /* AppearenceController.swift */,
 				FACFD45C1D909EE300C2B154 /* Assets.xcassets */,
 				FACFD45E1D909EE300C2B154 /* LaunchScreen.storyboard */,
 				FACFD4611D909EE300C2B154 /* Info.plist */,
@@ -186,6 +189,7 @@
 				FAAC05B21D9386A900AC5847 /* CategoriesViewController.swift in Sources */,
 				FAF2D2B61D9237AB00B130A5 /* FinalScoreViewController.swift in Sources */,
 				FACFD46B1D90A50700C2B154 /* Assignment+CoreDataProperties.swift in Sources */,
+				FA9F9E891D959DAD00143DC1 /* AppearenceController.swift in Sources */,
 				FACFD46C1D90A50700C2B154 /* Assignment.swift in Sources */,
 				FACFD4701D90A6FD00C2B154 /* Stack.swift in Sources */,
 				FAAC05B01D9379E300AC5847 /* AssignmentDetailTableViewController.swift in Sources */,
