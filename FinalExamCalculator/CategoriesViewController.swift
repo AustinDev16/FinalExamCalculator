@@ -46,6 +46,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             
             let newWeight = pickerValues[row]
             let newWeightForNextComponent = weightToMatch - newWeight
+            
+            
             if newWeightForNextComponent < 0 {
                 
             } else {
@@ -204,11 +206,11 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         let labelCenterX = NSLayoutConstraint(item: categoryLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
         self.view.addConstraints([labelTop, labelCenterX])
         
-        //Cancel button
+        //Done button
         let doneButtonTop = NSLayoutConstraint(item: doneButton, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 20)
-        let doneButtonTrailing = NSLayoutConstraint(item: doneButton, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1, constant: 0)
-        let doneButtonLeading = NSLayoutConstraint(item: doneButton, attribute: .Leading, relatedBy: .Equal, toItem: categoryLabel, attribute: .Trailing, multiplier: 1, constant: 0)
-        self.view.addConstraints([doneButtonTop, doneButtonTrailing, doneButtonLeading])
+        let doneButtonLeading = NSLayoutConstraint(item: doneButton, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .LeadingMargin, multiplier: 1, constant: 0)
+        //let doneButtonTrailing = NSLayoutConstraint(item: doneButton, attribute: .Trailing, relatedBy: .Equal, toItem: categoryLabel, attribute: .Leading, multiplier: 1, constant: 0)
+        self.view.addConstraints([doneButtonTop, doneButtonLeading])
         
         //Textfield and add button
         let textFieldBottom = NSLayoutConstraint(item: newCategoryTextField, attribute: .Bottom, relatedBy: .Equal, toItem: tableView, attribute: .Top, multiplier: 1, constant: 0)
@@ -255,7 +257,12 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func addCategoryTapped(){
         
+//        guard let categoryName = newCategoryTextField.text where categoryName.characters.count > 0 else { return}
+//        
+//        FinalExamController.sharedController.createCategory(categoryName, weight: 0)
+//        FinalExamController.sharedController.redistributeWeights()
         newCategoryTextField.resignFirstResponder()
+        updatePickerWithWeights()
         
     }
     

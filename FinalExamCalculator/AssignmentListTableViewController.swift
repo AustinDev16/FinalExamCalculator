@@ -18,7 +18,8 @@ class AssignmentListTableViewController: UITableViewController {
         self.title = "Scores"
         self.navigationController?.navigationBar.barTintColor = greyColor
         self.navigationController?.navigationBar.alpha = 1
-
+        
+        self.definesPresentationContext = true
         
         let addButton = UIBarButtonItem(title: "Add Score", style: .Plain, target: self, action: #selector(self.addScoreButtonTapped))
         let categoriesButton = UIBarButtonItem(title: "Categories", style: .Plain, target: self, action: #selector(self.categoriesButtonTapped))

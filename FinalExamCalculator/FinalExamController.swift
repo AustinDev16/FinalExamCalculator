@@ -88,7 +88,18 @@ class FinalExamController {
         FinalExamController.sharedController.categories.removeAtIndex(index)
     }
     
-    func assignWeights(){
+    func redistributeWeights(){
+        let numberOfCat = categories.count
+        let weight = 100/numberOfCat
+        
+        let adjustment = 100 % weight
+        
+        for category in categories {
+            category.weight = Double(weight)/100.0
+        }
+        
+       // categories[numberOfCat - 1].weight = Double(weight + adjustment)/100.0
+        
         
     }
     // MARK: - CoreData
