@@ -14,7 +14,7 @@ class AssignmentListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         let gradient = AppearenceController.gradient()
-        //gradient.locations = [0.3, 1.2]
+        gradient.locations = [0.3, 1.2]
         gradient.frame = self.view.bounds
         //self.view.layer.addSublayer(gradient)
         //self.tableView.layer.addSublayer(gradient)

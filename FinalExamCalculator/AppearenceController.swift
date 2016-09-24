@@ -16,11 +16,12 @@ public let blueColor = UIColor(red: 133/255, green: 198/255, blue: 234/255, alph
 class AppearenceController{
     static func gradient() -> CAGradientLayer {
         let topColor = blueColor.CGColor
-        let bottomColor = UIColor.grayColor().CGColor
+        let bottomColor = UIColor.lightGrayColor().CGColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [topColor, bottomColor]
-        gradientLayer.locations = [0.0, 0.8]
+       // gradientLayer.locations = [0.0, 0.8]
+        gradientLayer.locations = [0.3, 1.2]
         
         return gradientLayer
     }

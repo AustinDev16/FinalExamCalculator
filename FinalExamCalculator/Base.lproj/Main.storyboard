@@ -20,6 +20,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="MXX-Vq-ArJ"/>
+                    <connections>
+                        <segue destination="UtR-a9-wkP" kind="presentation" id="0ha-8R-FJp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDI-6y-hVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +112,7 @@
                             <tableViewSection headerTitle="Name" id="Hqg-kC-GX7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="igf-Y1-Emb">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igf-Y1-Emb" id="QC7-u5-vEh">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -133,7 +136,7 @@
                             <tableViewSection headerTitle="Category" id="NgC-db-hfw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="Gf2-ZW-Guk">
-                                        <rect key="frame" x="0.0" y="207.5" width="600" height="79"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="600" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gf2-ZW-Guk" id="sRh-Do-9FI">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
@@ -156,7 +159,7 @@
                             <tableViewSection headerTitle="Score" id="I1W-u7-7xt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="yMJ-oc-1m9">
-                                        <rect key="frame" x="0.0" y="336.5" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="272.5" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMJ-oc-1m9" id="hna-fl-Tne">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
@@ -268,6 +271,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pFV-c7-MhK"/>
+        <segue reference="0ha-8R-FJp"/>
     </inferredMetricsTieBreakers>
 </document>
