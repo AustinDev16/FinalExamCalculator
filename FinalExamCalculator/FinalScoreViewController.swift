@@ -20,7 +20,6 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
     let currentGradeLabel = UILabel()
     let finalScoreHeader = UILabel()
     let desiredGradeLabel = UILabel()
-    let addScoreButton = UIBarButtonItem()
     let onYourFinal = UILabel()
     
     var desiredGrade: Double = 0 {
@@ -31,6 +30,9 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     var pickerValues: [Int] = []
     
+    func addScoreButtonTapped(){
+        self.performSegueWithIdentifier("addScoreFromFinal", sender: nil)
+    }
     
     // MARK: - View
     override func viewDidLoad() {
@@ -44,8 +46,8 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.navigationController?.navigationBar.backgroundColor = .whiteColor()
         self.navigationController?.navigationBar.alpha = 0.1
         
-        self.tabBarController?.tabBar.barTintColor = greyColor
-        self.tabBarController?.tabBar.backgroundColor = greyColor
+        //self.tabBarController?.tabBar.barTintColor = greyColor
+        //self.tabBarController?.tabBar.backgroundColor = greyColor
         setupLabelText()
         setupLayoutConstraints()
         self.scorePicker.delegate = self
@@ -72,15 +74,13 @@ class FinalScoreViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func setupLabelText(){
         self.title = "Final Exam"
+        let addScoreButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(addScoreButtonTapped))
+
+        
         addScoreButton.title = "Add Score"
-        self.navigationItem.rightBarButtonItem = addScoreButton
-        self.view.backgroundColor = blueColor
-        
-        //scorePicker.backgroundColor = .whiteColor()
-        
-        
+
         finalScoreLabel.text = "---"
-        finalScoreLabel.textColor = .redColor()
+        finalScoreLabel.textColor = redColor
         finalScoreLabel.font = UIFont(name: textFont, size: 36)
         
         currentGradeLabel.text = "Your current grade is: 76%"

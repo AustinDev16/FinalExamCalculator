@@ -142,7 +142,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         navBar.alpha = 0.8
         
         self.view.addSubview(navBar)
-        let navItem = UINavigationItem(title: "Categories")
+        let navItem = UINavigationItem(title: "Manage Categories")
         let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: nil, action: #selector(doneButtonTapped))
                 navItem.leftBarButtonItem = doneButton
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: nil, action: #selector(addCategoryTapped))
@@ -196,7 +196,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         
         
-        newCategoryTextField.placeholder = "New category"
+        newCategoryTextField.placeholder = "Add a new category"
         newCategoryTextField.delegate = self
         newCategoryTextField.returnKeyType = .Done
         newCategoryTextField.borderStyle = .RoundedRect
@@ -208,8 +208,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         weightLabel.font = UIFont(name: textFont, size: 24)
         
         instructionLabel.text = "Adjust weights from left to right."
-        instructionLabel.textColor = .redColor()
-        
+        instructionLabel.textColor = redColor 
         instructionLabel.font = UIFont(name: textFont, size: 18)
         
         //self.view.addSubview(categoryLabel)
