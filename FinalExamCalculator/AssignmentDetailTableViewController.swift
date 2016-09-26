@@ -14,7 +14,11 @@ class AssignmentDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let gradient = AppearenceController.gradient()
+        let backgroundView = UIView(frame: self.view.bounds)
+        backgroundView.layer.addSublayer(gradient)
+        self.tableView.backgroundView = backgroundView
+        self.tableView.backgroundColor = blueColor
        // let cancel = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonTapped))
         //self.navigationItem.backBarButtonItem = cancel
         
@@ -52,15 +56,31 @@ class AssignmentDetailTableViewController: UITableViewController {
         return 1
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    
+ //   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+//        switch indexPath.section{
+//        case 0:
+//            let cell = AssignmentNameTableViewCell()
+//            return cell
+//        case 1:
+//            let cell = CategoryTableViewCell()
+//            return cell
+//        case 2:
+//            let cell = ScoreTableViewCell()
+//            return cell
+//        default:
+//            let cell = UITableViewCell()
+//            return cell
+//        }
+        
+       // let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
-
-        return cell
-    }
-    */
+       // return cell
+       
+  //  }
+    
 
     /*
     // Override to support conditional editing of the table view.
